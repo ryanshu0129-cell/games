@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>笠閎的遊戲間</title>
+<meta name="description" content="跨欄夜賽、屋頂突圍，點開就能在瀏覽器玩，電腦手機都可以。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Noto+Sans+TC:wght@400;700;900&display=swap">
+<style>
+/* Layout: one column, title block then two game tiles side by side (stacked on phones) */
+:root {
+  --bg: #0d141c; --panel: #151f2a; --edge: #2a3a4c; --fg: #e6edf3; --muted: #8a9bb0;
+  --coral: #ff6b5a; --amber: #ffb547; --teal: #46c2cb;
+  --font-display: "Chakra Petch", "Noto Sans TC", ui-monospace, monospace;
+  --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; background: var(--bg); color: var(--fg); font-family: var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 48px;
+}
+main { max-width: 880px; margin: 0 auto; display: grid; gap: 32px; }
+.eyebrow { font-family: var(--font-display); color: var(--amber); letter-spacing: .2em; font-size: 12px; }
+h1 { margin: 6px 0 10px; font-weight: 900; font-size: clamp(36px, 8vw, 56px); line-height: 1.05; text-wrap: balance; }
+p { margin: 0; color: var(--muted); line-height: 1.7; max-width: 52ch; }
+.games { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+a.game {
+  display: grid; gap: 10px; padding: 24px; text-decoration: none; color: inherit;
+  background: var(--panel); border: 1px solid var(--edge); border-radius: 6px; transition: transform .15s, border-color .15s;
+}
+a.game:hover { transform: translateY(-2px); border-color: var(--accent); }
+a.game:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.game h2 { margin: 0; font-size: 28px; font-weight: 900; }
+.game .tag { font-family: var(--font-display); font-size: 12px; letter-spacing: .14em; color: var(--accent); }
+.game .play { margin-top: 6px; font-weight: 700; color: var(--accent); }
+footer { color: var(--muted); font-size: 12px; }
+@media (prefers-reduced-motion: reduce) { a.game { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">GAME ROOM</div>
+    <h1>笠閎的遊戲間</h1>
+    <p>點開就能玩，不用下載。電腦用鍵盤滑鼠，手機用觸控。</p>
+  </header>
+  <section class="games">
+    <a class="game" href="hurdle.html" style="--accent: var(--amber)">
+      <span class="tag">110M HURDLES</span>
+      <h2>跨欄夜賽</h2>
+      <p>夜間田徑場的 110 公尺跨欄，抓準節奏起跨，衝線拚秒數。</p>
+      <span class="play">開始玩 →</span>
+    </a>
+    <a class="game" href="rooftop.html" style="--accent: var(--coral)">
+      <span class="tag">TOP-DOWN SHOOTER</span>
+      <h2>屋頂突圍</h2>
+      <p>台北公寓頂樓的槍戰生存，躲掩體、撿槍，撐過一波又一波敵人。</p>
+      <span class="play">開始玩 →</span>
+    </a>
+  </section>
+  <footer>最高分只存在你自己的瀏覽器裡。</footer>
+</main>
+</body>
+</html>
